@@ -70,16 +70,31 @@ h1{
    
 }
 
+/* #test{
+	background: yellow url("../images/logo.png") no-repeat left top;
+	height: 200px;
+	width: 200px;
+	background-size: contain;
+	overflow: scroll;
+	background-attachment: local;
+	left:300px;
+	top:200px;
+	position: relative; <!-- absolute 꼭지점기준 relative 원래있던자리기준(시각상으로만 이동) fixed는 출력화면기준-->
+} */
 
  
 #visual{
    height:171px;
-   background: #313131;
+   background: #313131 url("../images/bg-visual.png") no-repeat center;
+   border-top: 3px solid #8CBA34;
    
 }  
 
 #body{ 
    min-height:300px;
+   border-top:5px solid #8cba34;
+   margin-top:1px;
+   background: url(../images/bg-body.png) repeat-y center;   
 }
  
    #aside{
@@ -101,5 +116,5 @@ h1{
 #footer{
    height: 100px;
    background: #313131;
-  
+   
 }
