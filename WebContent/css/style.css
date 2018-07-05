@@ -1,5 +1,15 @@
 h1, h2 {
-   color: blue;
+  color: blue;
+}
+
+li{
+	display: block;
+
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
 }
 
 .red {
@@ -14,25 +24,6 @@ h1.a {
    color: black;
 }
 
-#main-menu h1 {
- 
-   color: aqua;
-}
-
-#main-menu a.first {
-  
-   color: aqua;
-}
-
-#main-menu .first a {
- 
-   color: aqua;
-}
-
-#main-menu .first+li a {
-  
-   color: aqua;
-}
 
 /* reset---------------------------------------- */
 
@@ -69,7 +60,51 @@ h1{
    height:70px;
    
 }
+	#main-menu
+	{
+		/* border: 1px solid red; */
+		display: inline-block;
+	}
+		
+		
+		#main-menu > h1 {
+			display: none;
+		}
+		
+		#main-menu > ul {
+			
+			display: auto;
+			
+		}
+		
+			
 
+			#main-menu > ul > li{
+			
+				float: left;
+				padding-left: 24px;
+				background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
+			}
+			
+			#main-menu > ul > li:first-child{
+			
+			padding: 0px;
+			background: none;
+			
+			}
+			
+			
+			#main-menu > ul > li > a{
+				text-decoration: none;
+				color: #000000;
+				font-family: 맑은 돋움, 돋움, Arial, sans-serif;
+				font-size: 15px;
+				font-weight: bold;	
+			}
+			#main-menu > ul > li > a:hover{
+				color: #ff6a00;
+			}
+			
 /* #test{
 	background: yellow url("../images/logo.png") no-repeat left top;
 	height: 200px;
@@ -85,7 +120,7 @@ h1{
  
 #visual{
    height:171px;
-   background: #313131 url("../images/bg-visual.png") no-repeat center;
+   /* background: #313131 url("../images/bg-visual.png") no-repeat center; */
    border-top: 3px solid #8CBA34;
    
 }  
@@ -97,20 +132,23 @@ h1{
    background: url("../images/bg-body.png") repeat-y center;  
 }
  
-   #aside{
-      min-height: inherit;
-      width: 205px;
-      background: url("../images/bg-aside-title.png") no-repeat left top;
-      float:left;
-   } 
-     
-   #main{
-      min-height: inherit;
-      width: 755px;
-      padding-left:35px;
-      padding-top:45px;
-      float:left;
-   }
+#aside{
+   min-height: inherit;
+   width: 205px;
+   background: url("../images/bg-aside-title.png") no-repeat left top;
+   float:left;
+} 
+  
+#main{
+   min-height: inherit;
+   width: 755px;
+   padding-left:35px;
+   padding-top:45px;
+   float:left;
+   box-sizing: border-box;
+}
+
+
    
 
 
