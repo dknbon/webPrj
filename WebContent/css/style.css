@@ -94,20 +94,21 @@ h1{
    min-height:300px;
    border-top:5px solid #8cba34;
    margin-top:1px;
-   background: url(../images/bg-body.png) repeat-y center;   
+   background: url("../images/bg-body.png") repeat-y center;  
 }
  
    #aside{
       min-height: inherit;
       width: 205px;
-      
+      background: url("../images/bg-aside-title.png") no-repeat left top;
       float:left;
    } 
      
    #main{
       min-height: inherit;
       width: 755px;
-     
+      padding-left:35px;
+      padding-top:45px;
       float:left;
    }
    
