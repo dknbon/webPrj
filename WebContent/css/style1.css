@@ -1,0 +1,133 @@
+@CHARSET "UTF-8";
+
+.page{
+	margin-left:300px;
+	margin-right:auto;
+
+}
+
+.content{
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 1080px;
+	
+}
+
+.card bg-light mb-3{
+	
+	margin: 0px;
+	margin-bottom: 5px;
+	padding: 30px;
+}
+
+.header-text{
+	width: 600px;
+	float: left;
+	margin: 0px;
+	
+}
+
+.small-text{
+	line-height: 20px;
+	margin-top: 10px;
+    display: block;
+	
+	
+}
+
+.partners-unit{
+	position:relative;
+	min-height:120px;
+	overflow:hidden;
+	margin:0 0 5px;
+	
+}
+.partners-basic-info{
+	padding:30px;
+	margin-bottom:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+	
+}
+.card-img1{
+	width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+    float: left;
+    
+}
+
+.card-body-h{
+	padding-top : auto;
+	padding-left : 50px;
+	overflow: hidden;
+	
+	
+	
+}
+
+.card-body-head{
+	padding: 10px;
+	width: 600px;
+}
+
+body{
+	margin: 0;
+    font-family: "Nanum Gothic","Apple SD Gothic Neo","맑은 고딕","Malgun Gothic","AppleGothic","돋움",Dotum,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #f3f4f7;
+    height: 100%;
+}
+
+.content-header{
+	padding: 30px;
+	margin: 30px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    border-bottom-width: 2px;
+    border: 1px solid #dedede;
+}
+
+.content-inner{
+	padding: 30px;
+	margin: 30px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    border-bottom-width: 2px;
+    border: 1px solid #dedede;
+	
+}
+#main-menu > ul {
+	
+	display: auto;
+	display: flex;
+	padding: 0px;
+	background: none;
+	
+}
+
+#main-menu > ul > span{
+	padding-left: 24px;
+	background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
+	
+	/*order:2 2번째로 이동*/
+	
+}
+
+	
+	
+#main-menu > ul > span > a{
+	text-decoration: none;
+	color: #979797;
+	font-family: 맑은 돋움, 돋움, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;	
+}

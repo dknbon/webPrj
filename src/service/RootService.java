@@ -25,16 +25,25 @@ public class RootService {
 	private List<Notice> list;
 
 	
-	public List<Notice> getNoticeList() throws ClassNotFoundException, SQLException {
+	public List<Notice> getNoticeList(int page) throws ClassNotFoundException, SQLException {
 		list = new ArrayList<>();
 		url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		user = "c##sist";
 		password = "dclass";
-		sql = "select * from notice";
+		sql = "select * from \n" + 
+				"(select rownum num, n.* from \n" + 
+				"(select * from notice order by reg_date desc)n)\n" + 
+				"where num between ? and ?";
+		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		con = DriverManager.getConnection(url, user, password);
 		st = con.prepareStatement(sql);
+		st.setInt(1, (page-1)*10+1);
+		st.setInt(2, page*10);
+		
 		rs = st.executeQuery();
+		
+		
 		
 		while(rs.next())
 		{
