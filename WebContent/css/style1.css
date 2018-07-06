@@ -15,12 +15,6 @@
 	
 }
 
-.card bg-light mb-3{
-	
-	margin: 0px;
-	margin-bottom: 5px;
-	padding: 30px;
-}
 
 .header-text{
 	width: 600px;
@@ -65,7 +59,7 @@
 	padding-top : auto;
 	padding-left : 50px;
 	overflow: hidden;
-	
+
 	
 	
 }
@@ -114,20 +108,53 @@ body{
 	
 }
 
-#main-menu > ul > span{
+#main-menu > ul > li{
 	padding-left: 24px;
 	background: url("../images/bg-main-menu-vsp.png") no-repeat 12px center;
-	
-	/*order:2 2번째로 이동*/
-	
+
 }
 
+#main-menu > ul > li:first-child{
+			
+			padding: 0px;
+			background: none;
+
+}
 	
-	
-#main-menu > ul > span > a{
+#main-menu > ul > li > a{
 	text-decoration: none;
 	color: #979797;
 	font-family: 맑은 돋움, 돋움, Arial, sans-serif;
-	font-size: 15px;
+	font-size: 12px;
 	font-weight: bold;	
 }
+
+.card-body{
+	padding: 30px;
+    margin-bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 790px;
+    margin-left: -1px;
+    margin-bottom: 10px;
+}
+
+.partners-add-info{
+	padding: 30px;
+    padding-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 250px;
+    margin-right: -100px;
+}
+
+

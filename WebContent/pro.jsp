@@ -45,52 +45,11 @@
 
 		</div>
 
+	
 		<div class="card bg-light mb-3" style="width: 1180px;">
 			<div class="card-body">
 				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
-						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href="">Knowyourband </a><span
-							class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-
-					<p class="card-text">
-						<a href="">프로젝트 규모에 상관없이 저희가 관심있는 프로젝트에 주인의식을 가지고 작업에 임하고
-							있습니다. Mobile World 관련한 모든 디자인을 합니다. 업무는 미국과 한국 2곳에서 진행합니다.</a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
-					</div>
-				</div>
-				
-				<section>
-					<div>
-						<ul>
-							<li></li>
-							<li>
-								<span>계약한 프로젝트</span>
-							</li>
-							<li></li>
-						</ul>
-					</div>
-				
-				</section>
-
-			</div>
-		</div>
-
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
+					<a href=""> <img class="card-img1" alt="파트너스 프로필 이미지"
 						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
 					</a>
 				</div>
@@ -100,11 +59,11 @@
 						<a id="card-id" href="">Knowyourband </a> <span
 							class="badge badge-success"><a href=""> 활동가능</a></span>
 					</h4>
-					<div id = "main-menu-head">
+					<div id="main-menu-head">
 						<nav id="main-menu">
 						<ul>
-							<span><a href="">디자이너</a></span>
-							<span><a href="">개인사업자</a></span>
+							<li><a href="">디자이너</a></li>
+							<li><a href="">개인사업자</a></li>
 						</ul>
 						</nav>
 					</div>
@@ -120,125 +79,20 @@
 
 					</div>
 				</div>
-
 			</div>
+			<section class = "partners-add-info">
+				<div>
+					<ul>
+						<li></li>
+						<li>계약한 프로젝트</li>
+						<li></li>
+					</ul>
+				</div>
+
+				</section>
 		</div>
 
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
-						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href="">Knowyourband </a><span
-							class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-
-					<p class="card-text">
-						<a href="">프로젝트 규모에 상관없이 저희가 관심있는 프로젝트에 주인의식을 가지고 작업에 임하고
-							있습니다. Mobile World 관련한 모든 디자인을 합니다. 업무는 미국과 한국 2곳에서 진행합니다.</a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
-						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href="">Knowyourband </a><span
-							class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-
-					<p class="card-text">
-						<a href="">프로젝트 규모에 상관없이 저희가 관심있는 프로젝트에 주인의식을 가지고 작업에 임하고
-							있습니다. Mobile World 관련한 모든 디자인을 합니다. 업무는 미국과 한국 2곳에서 진행합니다.</a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
-						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href="">Knowyourband </a><span
-							class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-
-					<p class="card-text">
-						<a href="">프로젝트 규모에 상관없이 저희가 관심있는 프로젝트에 주인의식을 가지고 작업에 임하고
-							있습니다. Mobile World 관련한 모든 디자인을 합니다. 업무는 미국과 한국 2곳에서 진행합니다.</a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt=""
-						src="https://cdn.wishket.com/profiles/45269_20180625_eafa605ca93cd2c9.png">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href="">Knowyourband </a><span
-							class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-
-					<p class="card-text">
-						<a href="">프로젝트 규모에 상관없이 저희가 관심있는 프로젝트에 주인의식을 가지고 작업에 임하고
-							있습니다. Mobile World 관련한 모든 디자인을 합니다. 업무는 미국과 한국 2곳에서 진행합니다.</a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
+		
 
 		<div>
 			<nav aria-label="Page navigation example"
