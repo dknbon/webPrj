@@ -27,10 +27,12 @@
 	 
 	RootService service = new RootService();
 	
-	List<Partner> list = service.getNoticeList(pageNo);
+	//List<Partner> list = service.getNoticeList(pageNo);
 	
-	//List<Project> list = service.getNoticeList(field, query, pageNo);
-	//int count = service.getNoticeCount(field, query); 
+	
+	List<Partner> list = service.getNoticeList(field, query, pageNo);
+	int count = service.getNoticeCount(field, query); 
+	Partner pnum = list.get(0);
 %>	
 	
 
@@ -57,22 +59,21 @@
 			<div class="card-body">
 				<div class="card-body-head" style="float: left;">
 					<h4 class="card-title">"파트너스 목록"</h4>
-					<p class="card-text">5035,798명의 파트너스가 있습니다.</p>
+					<p class="card-text"><%=pnum.getNum() %>명의 파트너스가 있습니다.</p>
 				</div>
-
-				<div class="btn-group">
-					<button type="button" class="btn btn-danger dropdown-toggle"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Action</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Action</a> <a
-							class="dropdown-item" href="#">Another action</a> <a
-							class="dropdown-item" href="#">Something else here</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Separated link</a>
-					</div>
+				
+				<div>
+				<h1>공지사항 검색폼</h1>
+					<form method="get"> 
+						<select name = "f">
+							<option value="all">전체 직군</option>
+							<option value="devel">개발자</option>
+							<option value="design">디자이너</option>
+						</select>
+						<input type="text" name="q" placeholder="검색어를 입력하세요" value="<%=query%>"/>
+						<input type="submit" class="btn btn-primary" value="검색"/>		
+					</form>
 				</div>
-
 			</div>
 
 
@@ -136,7 +137,7 @@
 					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 						<span class="sr-only">Previous</span>
 				</a></li>
-				<%for(int i = 1; i<=10;i++){ %>
+				<%for(int i = 1; i<=5;i++){ %>
 				<li class="page-item"><a class="page-link" href="#"><%=i %></a></li>
 
 				<%} %>

@@ -30,7 +30,7 @@ public List<Partner> getNoticeList(String field, String query, int page) throws 
 	url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 	user = "c##wapadmin";
 	password = "2130admin";
-	sql =  "select * from (select rownum num, p.* from partner p) where num between ? and ?";
+	sql =  "select * from (select rownum num, p.* from partner p order by num desc) where num between ? and ?";
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	con = DriverManager.getConnection(url, user, password);
 	st = con.prepareStatement(sql);
@@ -44,6 +44,7 @@ public List<Partner> getNoticeList(String field, String query, int page) throws 
 	while(rs.next())
 	{
 		Partner aa = new Partner(
+								rs.getString("num"),
 								rs.getString("ID"),
 								rs.getString("intro"),
 								rs.getString("pro_img"),

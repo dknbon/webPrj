@@ -1,9 +1,12 @@
 package com.answeris.web;
 
 public class Partner {
+	private String num;
 	private String id;
 	private String pwd;
 	private String email;
+
+
 	private String intro;
 	private String pro_img;
 	private String type;
@@ -15,8 +18,9 @@ public class Partner {
 	private String account;
 	private String last_addr;
 	
-	public Partner(String id, String intro, String pro_img, String type, String manager) {
+	public Partner(String num, String id, String intro, String pro_img, String type, String manager) {
 		super();
+		this.num = num;
 		this.id = id;
 		this.intro = intro;
 		this.pro_img = pro_img;
@@ -25,6 +29,14 @@ public class Partner {
 	}
 
 	public Partner() {	}
+	
+	public String getNum() {
+		return num;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
 
 	public String getId() {
 		return id;
@@ -150,9 +162,10 @@ public class Partner {
 
 	@Override
 	public String toString() {
-		return "Partner [id=" + id + ", pwd=" + pwd + ", email=" + email + ", intro=" + intro + ", pro_img=" + pro_img
-				+ ", type=" + type + ", manager=" + manager + ", company=" + company + ", ceo=" + ceo + ", sul_date="
-				+ sul_date + ", ye_name=" + ye_name + ", account=" + account + ", last_addr=" + last_addr + "]";
+		return "Partner [num=" + num + ", id=" + id + ", pwd=" + pwd + ", email=" + email + ", intro=" + intro
+				+ ", pro_img=" + pro_img + ", type=" + type + ", manager=" + manager + ", company=" + company + ", ceo="
+				+ ceo + ", sul_date=" + sul_date + ", ye_name=" + ye_name + ", account=" + account + ", last_addr="
+				+ last_addr + "]";
 	}
 	
 
