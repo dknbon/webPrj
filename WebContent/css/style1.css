@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+ul{
+		list-style-type: none;
+}
+
 .page{
 	margin-left:300px;
 	margin-right:auto;
@@ -105,6 +109,7 @@ body{
 	display: flex;
 	padding: 0px;
 	background: none;
+
 	
 }
 
@@ -124,9 +129,10 @@ body{
 #main-menu > ul > li > a{
 	text-decoration: none;
 	color: #979797;
-	font-family: 맑은 돋움, 돋움, Arial, sans-serif;
-	font-size: 12px;
+	font-family: 맑은 고딕, 고딕, Arial, sans-serif;
+	font-size: 13px;
 	font-weight: bold;	
+	display: block;
 }
 
 .card-body{
@@ -147,14 +153,32 @@ body{
 .partners-add-info{
 	padding: 30px;
     padding-left: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline;
+    display: inline-block;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
     width: 250px;
-    margin-right: -100px;
+    position: absolute;
+    right: 0px;
+}
+
+#card-text > a{
+	text-decoration: none;
+	color: #808080;
+	font-family: 맑은 고딕, 고딕, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: bold;	
+	display: block;
+	
+}
+
+#card-id{
+	text-decoration: none;
+	color: #8080ff;
+	font-family: 맑은 고딕, 고딕, Arial, sans-serif;
+	font-size: 30px;
+	font-weight: bold;	
+	display: block;
+	
 }
 
 

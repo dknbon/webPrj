@@ -1,6 +1,4 @@
-h1, h2 {
-  color: blue;
-}
+
 
 li{
 	display: block;
@@ -10,10 +8,6 @@ li{
 ul {
 	margin: 0px;
 	padding: 0px;
-}
-
-.red {
-   color: red;
 }
 
 .red a {
@@ -43,6 +37,13 @@ h1{
    
    margin-left: auto;
    margin-right: auto;
+   position: relative;
+}   
+.content-container > h1{
+	display: inline-block;
+	position: absolute;
+    top:23px;
+
 }   
 
 .clearfix::after{
@@ -62,15 +63,24 @@ fieldset{
 	border: none;
 }
 
+
+
 #header{ 
    height:70px;
    
+}
+#head > h1{
+	display: none;
+	
 }
 /*--------main menu---------------------*/
 	#main-menu
 	{
 		/* border: 1px solid red; */
 		display: inline-block;
+		position: absolute;
+		left: 200px;
+		top: 27px;
 	}
 		
 		
@@ -110,6 +120,7 @@ fieldset{
 				font-family: 맑은 돋움, 돋움, Arial, sans-serif;
 				font-size: 15px;
 				font-weight: bold;	
+				display: block;
 			}
 			#main-menu > ul > li > a:hover{
 				color: #ff6a00;
@@ -131,6 +142,10 @@ fieldset{
 		border: 5px solid #8cba34;
 		height: 25px;
 		width: 308px;
+		display:inline-block;
+		position: absolute;
+		left: 468px;
+		top: 21px;
 		
 	}
 	
@@ -168,12 +183,100 @@ fieldset{
 		width: 31px;
 		height: 25px;
 		border: none;
+		border-left: 1px solid #8cba34;
 		background: url("../images/btn-zoom.png") no-repeat center;
 		/*들여쓰기*/
 		text-indent: -999px;	
 	}
 /* 	박스테두리 없애고  왼쪽 오른쪽 패딩을 5px
 	박스크기 변경모드를 boder-size */
+#red{
+	display: inline-block;
+
+	position: absolute;
+		right: 0px;
+		top: 20px;
+}
+
+#red>h1{
+	display: none;
+	
+}
+
+		#red > ul {
+			
+			display: auto;
+			display: flex;
+			
+		}
+		
+			#red > ul > li{
+				display: inline-flex;
+				float: left; 
+				padding-left: 9px;
+				background: url("../images/bg-member-menu-sp.png") no-repeat 5px center ;
+				
+			}
+			
+			#red > ul > li:first-child{
+			
+			padding: 0px;
+			background: none;
+			/*order:2 2번째로 이동*/ 
+			}
+			
+			
+			#red > ul > li > a{
+				
+				text-decoration: none;
+				color: #979797;
+				font-family: 맑은 고딕, 돋움, Arial, sans-serif;
+				font-size: 10px;
+				font-weight: bold;	
+			}
+			#red > ul > li > a:hover{
+				color: #ff6a00;
+			}
+			
+#yellow{
+	display:inline-block;
+	position: absolute;
+		right: 0px;
+		top: 40px;
+		
+}	
+
+#yellow>h1{
+	display: none;
+}
+#yellow > ul {
+			
+			
+			display: flex;
+		}
+		
+			#yellow > ul > li{
+				 display: inline-flex; 
+				/* float: left;  */
+				height: auto;
+			}
+			
+			#yellow>ul>li>a{
+			width:72px;
+			height: 17px;
+			text-indent: -999px;
+			overflow: hidden;
+			/* display: inline-block; */
+			}
+			
+			#yellow>ul>li:first-child>a{
+			background: url("../images/txt-mypage.png") no-repeat center;
+			}
+			#yellow>ul>li:last-child>a{
+			background: url("../images/txt-customer.png") no-repeat center;
+			}
+			
+
 
 #visual{
    height:171px;

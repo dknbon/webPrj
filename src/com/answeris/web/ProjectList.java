@@ -1,4 +1,4 @@
-package service;
+package com.answeris.web;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,14 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 import entity.Notice;
 
-public class RootService {
+public class ProjectList {
 	private String url;
 	private String user;
 	private String password;
@@ -80,6 +77,7 @@ public class RootService {
 		password = "dclass";
 		sql = "select count(id) count from notice where " + field + " like ? " ;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+		System.out.println(sql);
 		con = DriverManager.getConnection(url, user, password);
 		st = con.prepareStatement(sql);	
 		st.setString(1, "%"+query+"%");
@@ -94,4 +92,5 @@ public class RootService {
 		return count;
 	}
 	
+
 }
