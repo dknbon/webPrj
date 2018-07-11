@@ -4,10 +4,25 @@ ul{
 		list-style-type: none;
 }
 
-.page{
-	margin-left:300px;
-	margin-right:auto;
+a{
+	color: #2099bb;
+    text-decoration: none;
+}
 
+.page{
+	margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+
+}
+
+#page-body{
+   display: inline;
+   float: left;
+   margin-left: 10px;
+   margin-right: 10px; 
+    width: 1060px;
+    overflow: auto;
 }
 
 .content{
@@ -63,14 +78,35 @@ ul{
 	padding-top : auto;
 	padding-left : 50px;
 	overflow: hidden;
-
+	position: relative;
+    margin-bottom: 10px;
 	
 	
 }
 
 .card-body-head{
-	padding: 10px;
+	padding-left: 15px;
 	width: 600px;
+	position: relative;
+	
+	
+}
+.card-title{
+	font-family: inherit;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #575757;
+    text-rendering: optimizelegibility;
+        
+}
+.card-text{
+	line-height: 20px;
+	margin-top: 10px;
+    display: block;
+    font-size: 100%;
+    font-weight: normal;
+    color: #999;
+    box-sizing: border-box;
 }
 
 body{
@@ -178,7 +214,28 @@ body{
 	font-size: 30px;
 	font-weight: bold;	
 	display: block;
+	width: 100px;
+	margin: 0;
+    line-height: 1.5;
+    float: left;
+    color: #2099bb;
+	
+}
+#card-body-search{
+	top: 50px;
+	position: absolute;
+	right: 10px;
+	
 	
 }
 
+#card-body-search> h1{
+	display: none;
+	
+}
+#badge-suc{
+	position: relative;
+    top: 3px;
+    left: 10px;
+}
 

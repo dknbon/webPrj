@@ -87,23 +87,23 @@
 		<div class="content-container">
 			<aside id="aside">
 				<h1>고객센터</h1>
-				<section>
+				<section id="aside-customer-menu">
 					<h1>고객센터메뉴</h1>
 					<ul>
-						<li>공지사항</li>
-						<li>자주하는 질문</li>
-						<li>수강문의</li>
-						<li>이벤트</li>
+						<li><a href="">공지사항</a></li>
+						<li><a href="">자주하는 질문</a></li>
+						<li><a href="">수강문의</a></li>
+						<li><a href="">이벤트</a></li>
 					</ul>
 				</section>
-				<section>
+				<section id="company">
 					<h1>협력업체</h1>
 					<ul>
-						<li>노트펍스</li>
-						<li>나무랩연구소</li>
-						<li>한빛미디어</li>
-						<li>에이콘아카데미</li>
-						<li>쌍용교육센터</li>
+						<li><a href=""><img src="../images/notepubs.png" alt="노트펍스"/></a></li>
+						<li><a href=""><img src="../images/namoolab.png" alt="나무랩연구소"/></a></li>
+						<li><a href=""><img src="../images/hanbit.png" alt="한빛미디어"/></a></li>
+						<li><a href=""><img src="../images/acorn.png" alt="에이콘아카데미"/></a></li>
+						<li><a href=""><img src="../images/sist.png" alt="쌍용교육센터"/></a></li>
 					</ul>
 				</section>
 			</aside>
@@ -120,7 +120,7 @@
 						<li>공지사항</li>
 					</ul>
 				</section>
-				<section>
+				<section id="main-form">
 				<h1>공지사항 검색폼</h1>
 					<form method="get"> 
 						<select name = "f">
@@ -177,7 +177,7 @@
 
 				<section>
 					<h1>페이지</h1>
-					<div>이전</div>.
+					<div>이전</div>
 					<ul>
 						<%for(int i=1; i<=5;i++) {%>
 						<li><a href="?p=<%=i %>&f=<%=field %>&q=<%=query %>"><%=i %></a></li>

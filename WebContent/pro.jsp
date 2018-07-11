@@ -5,15 +5,16 @@
 	pageEncoding="UTF-8"%>
 <%
 	int pageNo = 1;
-	String field = "title";
+	int i = 1;
+	String field = "";
 	String query = "";
-	
+
 	/*페이징 관련*/
 	String pageNo_ = request.getParameter("p");
 	if (pageNo_ != null && !pageNo_.equals(""))
 		pageNo = Integer.parseInt(pageNo_);
-	
-	 /*검색 관련*/
+
+	/*검색 관련*/
 
 	String field_ = request.getParameter("f");
 	String query_ = request.getParameter("q");
@@ -22,19 +23,16 @@
 		field = field_;
 	if (query_ != null && !query_.equals(""))
 		query = query_;
-	
-	 /*-------------------------------------------*/
-	 
+
+	/*-------------------------------------------*/
+
 	RootService service = new RootService();
-	
-	//List<Partner> list = service.getNoticeList(pageNo);
-	
-	
+
 	List<Partner> list = service.getNoticeList(field, query, pageNo);
-	int count = service.getNoticeCount(field, query); 
-	Partner pnum = list.get(0);
-%>	
-	
+	int pnum = service.getNoticeCount(field, query);
+	String[] str = {};
+%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -55,66 +53,70 @@
 <body>
 	<main>
 	<div class="page">
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-body-head" style="float: left;">
-					<h4 class="card-title">"파트너스 목록"</h4>
-					<p class="card-text"><%=pnum.getNum() %>명의 파트너스가 있습니다.</p>
-				</div>
-				
-				<div>
-				<h1>공지사항 검색폼</h1>
-					<form method="get"> 
-						<select name = "f">
-							<option value="all">전체 직군</option>
-							<option value="devel">개발자</option>
-							<option value="design">디자이너</option>
-						</select>
-						<input type="text" name="q" placeholder="검색어를 입력하세요" value="<%=query%>"/>
-						<input type="submit" class="btn btn-primary" value="검색"/>		
-					</form>
-				</div>
-			</div>
-
-
-
-		</div>
-
-		<% for (Partner p : list) { %>
-		<div class="card bg-light mb-3" style="width: 1180px;">
-			<div class="card-body">
-				<div class="card-img">
-					<a href=""> <img class="card-img1" alt="파트너스 프로필 이미지"
-						src="<%=p.getPro_img()%>">
-					</a>
-				</div>
-
-				<div class="card-body-h">
-					<h4 class="card-title">
-						<a id="card-id" href=""><%=p.getId() %> </a> 
-						<span class="badge badge-success"><a href=""> 활동가능</a></span>
-					</h4>
-					<div id="main-menu-head">
-						<nav id="main-menu">
-						<ul>
-							<li><a href=""><%=p.getType() %></a></li>
-							<li><a href=""><%=p.getManager() %></a></li>
-						</ul>
-						</nav>
+		<div id = "page-body">
+			<div class="card bg-light mb-3" >
+				<div class="card-body">
+					<div class="card-body-head" style="float: left;">
+						<h4 class="card-title">파트너스 목록</h4>
+						<p class="card-text"><%=pnum%>명의 파트너스가 있습니다.
+						</p>
 					</div>
 
-					<p id="card-text">
-						<a href=""><%=p.getIntro() %></a>
-					</p>
-					<div>
-						<span class="badge badge-secondary">인테리어 </span> <span
-							class="badge badge-secondary">Java </span> <span
-							class="badge badge-secondary">PHP </span>
-
+					<div id="card-body-search">
+						<h1>공지사항 검색폼</h1>
+						<form method="get">
+							<select name="f">
+								<option value="">전체 직군</option>
+								<!--  -->
+								<option value="개발자">개발자</option>
+								<option value="디자이너">디자이너</option>
+							</select> <input type="text" name="q" value="<%=query%>" /> <input
+								type="submit" class="btn btn-primary" value="검색" />
+						</form>
 					</div>
 				</div>
+
+
+
 			</div>
-			<section class = "partners-add-info">
+
+			<%
+				for (Partner p : list) {
+			%>
+			<div class="card bg-light mb-3" >
+				<div class="card-body">
+					<div class="card-img">
+						<a href=""> <img class="card-img1" alt="파트너스 프로필 이미지"
+							src="<%=p.getPro_img()%>">
+						</a>
+					</div>
+
+					<div class="card-body-h">
+						<h4 class="card-title">
+							<a id="card-id" href=""><%=p.getId()%> </a> <span
+								class="badge badge-success" id="badge-suc"><a href=""> 활동가능</a></span>
+						</h4>
+						<div id="main-menu-head">
+							<nav id="main-menu">
+							<ul>
+								<li><a href=""><%=p.getType()%></a></li>
+								<li><a href=""><%=p.getManager()%></a></li>
+							</ul>
+							</nav>
+						</div>
+
+						<p id="card-text">
+							<a href=""><%=p.getIntro()%></a>
+						</p>
+						<div>
+							<span class="badge badge-secondary">Mysql </span> <span
+								class="badge badge-secondary">Java </span> <span
+								class="badge badge-secondary">PHP </span>
+
+						</div>
+					</div>
+				</div>
+				<section class="partners-add-info">
 				<div>
 					<ul>
 						<li></li>
@@ -124,33 +126,53 @@
 				</div>
 
 				</section>
-		</div>
-		<%} %>
+			</div>
+			<%
+				}
+			%>
 
-		
 
-		<div>
-			<nav aria-label="Page navigation example"
-				style="padding-left: 400px;">
-			<ul class="pagination">
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-						<span class="sr-only">Previous</span>
-				</a></li>
-				<%for(int i = 1; i<=5;i++){ %>
-				<li class="page-item"><a class="page-link" href="#"><%=i %></a></li>
 
-				<%} %>
-				<li class="page-item"><a class="page-link" href="#"
-					aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
-						class="sr-only">Next</span>
-				</a></li>
-			</ul>
-			</nav>
+			<div>
+				<nav aria-label="Page navigation example"
+					style="padding-left: 400px;">
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link"
+						href="?p=<%if (i > 1) {
+				i = i - 1;
+			}%> <%=i%>
+				
+				
+				%>&f=<%=field%>&q=<%=query%>"
+						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+							<span class="sr-only">Previous</span>
+					</a></li>
 
+					<%
+						for (int j = 0; j <= pnum / 10; j++) {
+					%>
+					<li class="page-item"><a class="page-link"
+						href="?p=<%=i%>&f=<%=field%>&q=<%=query%>"><%=i%></a></li>
+					<%
+						i = i + 1;
+						}
+					%>
+
+					<li class="page-item"><a class="page-link"
+						href="?p=<%if (i < pnum / 10) {
+				i = i + 1;
+			}%> <%=i%>
+			
+				%>&f=<%=field%>&q=<%=query%>"
+						aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
+							class="sr-only">Next</span>
+					</a></li>
+				</ul>
+				</nav>
+
+			</div>
 		</div>
 	</div>
-
 	</main>
 
 
