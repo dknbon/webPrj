@@ -24,6 +24,12 @@ public class Notice {
 		this.content = content;
 		this.writerId = writerId;
 	}
+	public Notice(String title, String content, String wirterid) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.writerId = wirterid;
+	}
 //for select
 	public Notice(String id, String title, String content, String writerId, Date regDate, int hit) {
 		super();

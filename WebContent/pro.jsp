@@ -1,8 +1,12 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Map"%>
 <%@page import="com.answeris.web.Partner"%>
 <%@page import="com.answeris.web.RootService"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>	
+	
 <%
 	int pageNo = 1;
 	int i = 1;
@@ -25,12 +29,19 @@
 		query = query_;
 
 	/*-------------------------------------------*/
-
 	RootService service = new RootService();
-
 	List<Partner> list = service.getNoticeList(field, query, pageNo);
 	int pnum = service.getNoticeCount(field, query);
-	String[] str = {};
+	int prjnum = service.getPrjno(query);
+	int portFolionum = service.getPortfoliono(query);
+	Map<String, String> map = service.getEval(query);
+	
+	
+	for(Partner p : list){
+		p.setSkills(service.getSkilles(p.getId()));
+	}
+
+	 
 %>
 
 
@@ -86,7 +97,7 @@
 			<div class="card bg-light mb-3" >
 				<div class="card-body">
 					<div class="card-img">
-						<a href=""> <img class="card-img1" alt="파트너스 프로필 이미지"
+						<a href="pro1.jsp"> <img class="card-img1" alt="파트너스 프로필 이미지"
 							src="<%=p.getPro_img()%>">
 						</a>
 					</div>
@@ -94,38 +105,43 @@
 					<div class="card-body-h">
 						<h4 class="card-title">
 							<a id="card-id" href=""><%=p.getId()%> </a> <span
-								class="badge badge-success" id="badge-suc"><a href=""> 활동가능</a></span>
+								class="badge badge-success" id="badge-suc"><a href="pro1.jsp"> 활동가능</a></span>
 						</h4>
 						<div id="main-menu-head">
 							<nav id="main-menu">
 							<ul>
-								<li><a href=""><%=p.getType()%></a></li>
-								<li><a href=""><%=p.getManager()%></a></li>
+								<li><a href="pro1.jsp"><%=p.getType()%></a></li>
+								<li><a href="pro1.jsp"><%=p.getManager()%></a></li>
 							</ul>
 							</nav>
 						</div>
 
 						<p id="card-text">
-							<a href=""><%=p.getIntro()%></a>
+							<a href="pro1.jsp"><%=p.getIntro()%></a>
 						</p>
 						<div>
 							<span class="badge badge-secondary">Mysql </span> <span
 								class="badge badge-secondary">Java </span> <span
 								class="badge badge-secondary">PHP </span>
-
 						</div>
 					</div>
 				</div>
+				
+				
+				
 				<section class="partners-add-info">
 				<div>
-					<ul>
-						<li></li>
-						<li>계약한 프로젝트</li>
-						<li></li>
+					<ul id="partners-eval">
+						<li><%=map.get("avg") %> / 평가 : <%=map.get("count") %>개</li>
+						<li>계약한 프로젝트 : <%=prjnum %>건</li>
+						<li>포트폴리오 : <%=portFolionum %>개</li>
 					</ul>
 				</div>
-
 				</section>
+				
+				
+				
+				
 			</div>
 			<%
 				}
@@ -137,16 +153,12 @@
 				<nav aria-label="Page navigation example"
 					style="padding-left: 400px;">
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link"
-						href="?p=<%if (i > 1) {
-				i = i - 1;
-			}%> <%=i%>
-				
-				
-				%>&f=<%=field%>&q=<%=query%>"
-						aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-							<span class="sr-only">Previous</span>
+					<li class="page-item">
+					<a class="page-link" href="#" aria-label="Previous"> 
+						<span aria-hidden="true">&laquo;</span>
+						<span class="sr-only">Previous</span>
 					</a></li>
+
 
 					<%
 						for (int j = 0; j <= pnum / 10; j++) {
@@ -157,25 +169,16 @@
 						i = i + 1;
 						}
 					%>
-
-					<li class="page-item"><a class="page-link"
-						href="?p=<%if (i < pnum / 10) {
-				i = i + 1;
-			}%> <%=i%>
-			
-				%>&f=<%=field%>&q=<%=query%>"
+					<li class="page-item"><a class="page-link" href="#"
 						aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
 							class="sr-only">Next</span>
 					</a></li>
 				</ul>
 				</nav>
-
 			</div>
 		</div>
 	</div>
 	</main>
-
-
 
 </body>
 </html>

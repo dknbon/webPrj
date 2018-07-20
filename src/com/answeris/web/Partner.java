@@ -1,12 +1,12 @@
 package com.answeris.web;
 
+import java.util.List;
+
 public class Partner {
 	private String num;
 	private String id;
 	private String pwd;
 	private String email;
-
-
 	private String intro;
 	private String pro_img;
 	private String type;
@@ -17,6 +17,8 @@ public class Partner {
 	private String ye_name;
 	private String account;
 	private String last_addr;
+	
+	private List<String> skills;
 	
 	public Partner(String num, String id, String intro, String pro_img, String type, String manager) {
 		super();
@@ -72,6 +74,14 @@ public class Partner {
 
 	public String getPro_img() {
 		return pro_img;
+	}
+
+	public List<String> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(List<String> skills) {
+		this.skills = skills;
 	}
 
 	public void setPro_img(String pro_img) {
@@ -165,7 +175,7 @@ public class Partner {
 		return "Partner [num=" + num + ", id=" + id + ", pwd=" + pwd + ", email=" + email + ", intro=" + intro
 				+ ", pro_img=" + pro_img + ", type=" + type + ", manager=" + manager + ", company=" + company + ", ceo="
 				+ ceo + ", sul_date=" + sul_date + ", ye_name=" + ye_name + ", account=" + account + ", last_addr="
-				+ last_addr + "]";
+				+ last_addr + ", skills=" + skills + "]";
 	}
 	
 

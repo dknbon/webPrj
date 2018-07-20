@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 import entity.Notice;
 
-public class RootService {
+public class CustomerService {
 	private String url;
 	private String user;
 	private String password;
@@ -94,4 +94,59 @@ public class RootService {
 		return count;
 	}
 	
+	public Notice getNoticeDetail(long id) throws ClassNotFoundException, SQLException {
+		Notice notice = null;
+		list = new ArrayList<>();
+		url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		user = "c##sist";
+		password = "dclass";
+		sql = "select * from notice where id = "+id;
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con = DriverManager.getConnection(url, user, password);
+		st = con.prepareStatement(sql);
+		rs = st.executeQuery();
+		
+		
+		
+		if(rs.next())
+		{
+			notice = new Notice(
+									rs.getString("ID"), //아이디
+									rs.getString("TITLE"), // 제목
+									rs.getString("CONTENT"), //내용
+									rs.getString("WRITER_ID"), //작성자 아이디
+									rs.getDate("REG_DATE"), // 작성일
+									rs.getInt("HIT")); // 조회수
+			rs.close();
+			st.close();
+			con.close();		
+			return notice;
+			
+		}
+		
+
+		return null;
+	}
+
+	public void insertNotice(Notice notice) throws ClassNotFoundException, SQLException {
+		url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		user = "c##sist";
+		password = "dclass";
+		sql = "insert into notice(id,title,content,writer_id) values((select NVL(max(to_number(id)),0)+1 id from notice),?,?,?)";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		con = DriverManager.getConnection(url, user, password);
+		st = con.prepareStatement(sql);
+		st.setString(1, notice.getTitle());
+		st.setString(2, notice.getContent());
+		st.setString(3, notice.getWriterId());
+
+		st.executeUpdate();
+
+		st.close();
+		con.close();	
+		}	
 }
+		
+	
+

@@ -29,7 +29,19 @@ public class calc extends HttpServlet{
 			x = Integer.parseInt(x_);
 		if(y_ != null && !y_.equals(""))
 			y = Integer.parseInt(y_);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("sum", x+y);
 		}
+		
+		ServletContext application = request.getServletContext();
+		application.setAttribute("sum", x+y);
+		
+		Cookie cookie = new Cookie("sum",String.valueOf(x+y));
+		response.addCookie(cookie);
+		//cookie.setPath("/sfsd/aaa/ccc/");
+		cookie.setMaxAge(60*60*24*30);
+		
 	      out.write("<!DOCTYPE html>\n");
 	      out.write("<html>\n");
 	      out.write("<head>\n");
@@ -54,11 +66,10 @@ public class calc extends HttpServlet{
 	      out.write("    </div>");
 	      out.write("</form>");
 	      out.write("");
+	      out.write("<a href=\"mypage\">마이페이지</a>");
 	      out.write("</body>");
 	      out.write("</html>");
-		
-		
-		
+	
 	}
 	
 	
